@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CFD & HPC Engineering Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="Portfolio of a Computational Fluid Dynamics (CFD) and High Performance Computing (HPC) engineer specializing in GPU acceleration, C++, Python, and large-scale simulation.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <!-- Replace with your name -->
+        <span class="logo-mark">AB</span>
+        <span class="logo-text">CFD &amp; HPC Engineer</span>
+      </div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero / Intro -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <!-- Replace with your name -->
+          <h1>Hi, I’m <span class="accent">[Andrew Bodling]</span>.</h1>
+          <p class="hero-tagline">
+            Computational Fluid Dynamics (CFD) &amp; High Performance Computing (HPC) engineer
+            focused on GPU-accelerated solvers, performance-portable code, and production-scale simulation.
+          </p>
+          <p class="hero-sub">
+            I build and optimize flow solvers for complex geometries, large meshes, and modern architectures
+            (CPUs, GPUs, clusters).
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="andrew-bodling-resume.pdf" target="_blank" rel="noopener">
+              Download Resume (PDF)
+            </a>
+            <a class="btn secondary" href="#projects">
+              View Projects
+            </a>
+          </div>
+        </div>
+        <div class="hero-side">
+          <div class="hero-card">
+            <h2>Snapshot</h2>
+            <ul>
+              <li><strong>Focus:</strong> CFD, GPU performance, numerical methods</li>
+              <li><strong>Languages:</strong> C++, Python, Fortran, Bash</li>
+              <li><strong>Parallel:</strong> MPI, OpenMP, CUDA/OpenACC (or RAJA/Kokkos)</li>
+              <li><strong>Domains:</strong> Compressible flows, rotorcraft/aero, overset grids</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About</h2>
+        <div class="two-col">
+          <p>
+            I’m a CFD engineer and developer with experience building and optimizing high-fidelity
+            flow solvers for large-scale simulations. My work spans structured and overset grids,
+            implicit time integration, and high-order reconstruction schemes.
+          </p>
+          <p>
+            I enjoy profiling and tuning code to make simulations run <em>faster</em> and
+            <em>more robust</em> on modern hardware, from multi-core CPUs to GPUs and large HPC clusters.
+            I’m especially interested in performance-portable frameworks and clean, well-designed code.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="card">
+            <h3>CFD &amp; Numerics</h3>
+            <ul>
+              <li>Finite volume / finite difference methods</li>
+              <li>Compressible Navier–Stokes (steady &amp; unsteady)</li>
+              <li>High-order schemes (MUSCL, WENO, etc.)</li>
+              <li>Implicit solvers, CFL-limited time integration</li>
+              <li>Overset / chimera grids, curvilinear meshes</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>HPC &amp; Performance</h3>
+            <ul>
+              <li>MPI domain decomposition &amp; load balancing</li>
+              <li>Shared memory: OpenMP (or equivalent)</li>
+              <li>GPU acceleration (CUDA / OpenACC / Kokkos/RAJA)</li>
+              <li>Roofline/perf analysis, Nsight/VTune style tools</li>
+              <li>Vectorization, cache &amp; memory-bandwidth tuning</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Programming</h3>
+            <ul>
+              <li>C++ (modern, RAII, templates, STL)</li>
+              <li>Python (scientific stack, tooling, automation)</li>
+              <li>Fortran (legacy CFD codebases)</li>
+              <li>Bash &amp; Linux/HPC environments</li>
+              <li>Git, CMake, CI workflows</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Tools &amp; Ecosystem</h3>
+            <ul>
+              <li>GitHub / GitLab, GitHub Actions</li>
+              <li>Slurm &amp; HPC schedulers</li>
+              <li>Paraview/Tecplot for post-processing</li>
+              <li>LaTeX for papers &amp; reports</li>
+              <li>Docker/containers for reproducible runs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2>Experience</h2>
+        <div class="timeline">
+
+          <!-- Duplicate/adjust entries as needed -->
+          <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>CFD / HPC Engineer – [Company or Lab]</h3>
+              <span class="timeline-meta">[Dates] · [Location]</span>
+              <ul>
+                <li>Developed and maintained GPU-accelerated structured CFD solvers for compressible Navier–Stokes flows.</li>
+                <li>Implemented and verified high-order reconstruction schemes (e.g., MUSCL, WENO-type) on curvilinear grids.</li>
+                <li>Profiled and optimized kernels, achieving significant speed-ups vs. baseline CPU implementations.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Research Assistant – [University / Group]</h3>
+              <span class="timeline-meta">[Dates] · [Location]</span>
+              <ul>
+                <li>Conducted CFD studies of [application: rotorcraft, airfoils, wake interactions, etc.].</li>
+                <li>Validated simulations against experimental data and peer codes.</li>
+                <li>Authored publications and presented results at technical conferences.</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section section-alt">
+      <div class="container">
+        <h2>Selected Projects</h2>
+        <div class="cards-grid">
+
+          <article class="card project-card">
+            <h3>GPU-Accelerated Structured CFD Solver</h3>
+            <p>
+              Performance-portable compressible flow solver on structured/curvilinear grids,
+              targeting both CPUs and GPUs with a single codebase.
+            </p>
+            <ul class="tag-list">
+              <li>CFD</li>
+              <li>GPU</li>
+              <li>C++</li>
+              <li>MPI</li>
+            </ul>
+            <!-- Replace with actual GitHub link -->
+            <a class="card-link" href="https://github.com/yourusername/your-cfd-solver" target="_blank" rel="noopener">
+              View on GitHub →
+            </a>
+          </article>
+
+          <article class="card project-card">
+            <h3>High-Order Metric &amp; Reconstruction Study</h3>
+            <p>
+              Investigated stability and accuracy of high-order metric reconstruction and flux
+              schemes on curvilinear grids for challenging benchmark cases.
+            </p>
+            <ul class="tag-list">
+              <li>High-Order</li>
+              <li>Numerics</li>
+              <li>Python</li>
+            </ul>
+            <a class="card-link" href="https://github.com/yourusername/metrics-study" target="_blank" rel="noopener">
+              View on GitHub →
+            </a>
+          </article>
+
+          <article class="card project-card">
+            <h3>CFD Post-Processing &amp; Automation Toolkit</h3>
+            <p>
+              Python utilities for automated mesh/solution comparison, error analysis,
+              and publication-ready plots across multiple CFD codes.
+            </p>
+            <ul class="tag-list">
+              <li>Python</li>
+              <li>Data Analysis</li>
+              <li>Matplotlib</li>
+            </ul>
+            <a class="card-link" href="https://github.com/yourusername/cfd-tools" target="_blank" rel="noopener">
+              View on GitHub →
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="section">
+      <div class="container">
+        <h2>Publications &amp; Talks</h2>
+        <p class="section-intro">
+          A selection of relevant technical publications and presentations.
+        </p>
+        <ul class="pub-list">
+          <!-- Replace these with your real items -->
+          <li>
+            <strong>[Author], [Your Name]</strong>,
+            “Title of Your CFD / HPC Paper,”
+            <em>Conference or Journal Name</em>, Year.
+            <span class="pub-extra">Topics: high-order methods, overset grids, GPU performance.</span>
+          </li>
+          <li>
+            <strong>[Your Name]</strong>,
+            “Talk Title,”
+            Presented at <em>Conference / Workshop</em>, Year.
+            <span class="pub-extra">Focus: large-scale simulation on heterogeneous architectures.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>
+          I’m open to roles in CFD, HPC, scientific computing, and performance engineering.
+          Feel free to reach out if you’d like to discuss opportunities or collaborations.
+        </p>
+        <div class="contact-grid">
+          <div>
+            <h3>Email</h3>
+            <!-- Replace with your email -->
+            <p><a href="mailto:you@example.com">you@example.com</a></p>
+          </div>
+          <div>
+            <h3>Links</h3>
+            <ul class="links-list">
+              <li><a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Resume</h3>
+            <p>
+              <a href="andrew-bodling-resume.pdf" target="_blank" rel="noopener">
+                Download Resume (PDF)
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; <span id="year"></span> [Your Name]. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    // Simple current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
