@@ -469,8 +469,8 @@ a:hover {
 
 /* Photo wrapper: makes it a neat circle and keeps size under control */
 .hero-photo-wrapper {
-  width: 180px;          /* adjust if you want bigger/smaller */
-  height: 180px;
+  width: 540px;          /* adjust if you want bigger/smaller */
+  height: 540px;
   border-radius: 50%;    /* circular crop */
   overflow: hidden;
   border: 2px solid #e0e0e0;
@@ -482,5 +482,6 @@ a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;     /* keeps aspect ratio, crops edges as needed */
+  object-position: 50% 20%; /* <--- move crop upwards toward your face */
   display: block;
 }
