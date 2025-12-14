@@ -458,3 +458,29 @@ a:hover {
     position: static;
   }
 }
+
+/* Hero photo layout */
+.hero-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Photo wrapper: makes it a neat circle and keeps size under control */
+.hero-photo-wrapper {
+  width: 180px;          /* adjust if you want bigger/smaller */
+  height: 180px;
+  border-radius: 50%;    /* circular crop */
+  overflow: hidden;
+  border: 2px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Make the image fill the wrapper and be nicely cropped */
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* keeps aspect ratio, crops edges as needed */
+  display: block;
+}
