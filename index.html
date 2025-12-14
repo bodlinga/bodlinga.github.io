@@ -2,19 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CFD & HPC Engineering Portfolio</title>
+  <title>Andrew Bodling | CFD & HPC Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-        content="Portfolio of a Computational Fluid Dynamics (CFD) and High Performance Computing (HPC) engineer specializing in GPU acceleration, C++, Python, and large-scale simulation.">
+        content="Portfolio of Andrew Bodling, a rotorcraft and HPC CFD specialist with 10+ years of experience developing high-fidelity solvers, GPU-accelerated flow codes, and performance-portable infrastructure for DoD and industry.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <div class="logo">
-        <!-- Replace with your name -->
         <span class="logo-mark">AB</span>
-        <span class="logo-text">CFD &amp; HPC Engineer</span>
+        <span class="logo-text">Andrew&nbsp;Bodling · CFD &amp; HPC</span>
       </div>
       <nav class="nav">
         <a href="#about">About</a>
@@ -32,18 +31,19 @@
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-text">
-          <!-- Replace with your name -->
-          <h1>Hi, I’m <span class="accent">[Andrew Bodling]</span>.</h1>
+          <h1>Hi, I’m <span class="accent">Andrew Bodling</span>.</h1>
           <p class="hero-tagline">
-            Computational Fluid Dynamics (CFD) &amp; High Performance Computing (HPC) engineer
-            focused on GPU-accelerated solvers, performance-portable code, and production-scale simulation.
+            Rotorcraft &amp; HPC CFD specialist with 10+ years developing and applying
+            high-fidelity solvers for DoD and industry.
           </p>
           <p class="hero-sub">
-            I build and optimize flow solvers for complex geometries, large meshes, and modern architectures
-            (CPUs, GPUs, clusters).
+            Architect and lead developer of a performance-portable overset structured
+            curvilinear compressible flow near-body solver now being integrated into
+            CREATE-AV Helios—delivering GPU-accelerated, production-scale CFD.
           </p>
           <div class="hero-actions">
-            <a class="btn primary" href="andrew-bodling-resume.pdf" target="_blank" rel="noopener">
+            <!-- Make sure this PDF exists at assets/Andrew-Bodling-Resume-12-01-2025.pdf -->
+            <a class="btn primary" href="assets/andrew-bodling-resume.pdf" target="_blank" rel="noopener">
               Download Resume (PDF)
             </a>
             <a class="btn secondary" href="#projects">
@@ -55,10 +55,11 @@
           <div class="hero-card">
             <h2>Snapshot</h2>
             <ul>
-              <li><strong>Focus:</strong> CFD, GPU performance, numerical methods</li>
-              <li><strong>Languages:</strong> C++, Python, Fortran, Bash</li>
-              <li><strong>Parallel:</strong> MPI, OpenMP, CUDA/OpenACC (or RAJA/Kokkos)</li>
-              <li><strong>Domains:</strong> Compressible flows, rotorcraft/aero, overset grids</li>
+              <li><strong>Focus:</strong> Rotorcraft aerodynamics, HPC CFD, GPU solvers</li>
+              <li><strong>Languages:</strong> C++17/20, Fortran, Python, MATLAB, Bash</li>
+              <li><strong>Parallel:</strong> CUDA, MPI, OpenMP, Kokkos, Raja</li>
+              <li><strong>CFD Stack:</strong> Helios, OVERFLOW, FUN3D, FDL3DI, kCFD, PowerFLOW</li>
+              <li><strong>Location:</strong> NASA Ames – Moffett Field, CA</li>
             </ul>
           </div>
         </div>
@@ -71,14 +72,18 @@
         <h2>About</h2>
         <div class="two-col">
           <p>
-            I’m a CFD engineer and developer with experience building and optimizing high-fidelity
-            flow solvers for large-scale simulations. My work spans structured and overset grids,
-            implicit time integration, and high-order reconstruction schemes.
+            I’m a CFD engineer and developer specializing in rotorcraft and high-performance
+            computing. I’ve spent over a decade building, extending, and applying high-fidelity
+            solvers for the U.S. Department of Defense, NASA, and industry partners—covering
+            everything from rotorcraft wake aerodynamics to store-separation and tiltrotor /
+            ship-deck interactions.
           </p>
           <p>
-            I enjoy profiling and tuning code to make simulations run <em>faster</em> and
-            <em>more robust</em> on modern hardware, from multi-core CPUs to GPUs and large HPC clusters.
-            I’m especially interested in performance-portable frameworks and clean, well-designed code.
+            My work bridges numerical methods, GPU performance engineering, and production
+            workflows. I enjoy taking complex, legacy CFD ecosystems and turning them into
+            robust, performance-portable tools—integrating modern C++, Pybind11, and GPU
+            backends while keeping analysts productive and simulations tightly validated
+            against wind-tunnel and flight-test data.
           </p>
         </div>
       </div>
@@ -92,44 +97,44 @@
           <div class="card">
             <h3>CFD &amp; Numerics</h3>
             <ul>
-              <li>Finite volume / finite difference methods</li>
               <li>Compressible Navier–Stokes (steady &amp; unsteady)</li>
-              <li>High-order schemes (MUSCL, WENO, etc.)</li>
-              <li>Implicit solvers, CFL-limited time integration</li>
-              <li>Overset / chimera grids, curvilinear meshes</li>
+              <li>Rotor wake aerodynamics &amp; tiltrotor interactions</li>
+              <li>Finite volume / finite difference, LES / DES</li>
+              <li>High-order schemes (MUSCL, WENO, high-order filtering)</li>
+              <li>Overset / Chimera &amp; structured curvilinear grids</li>
             </ul>
           </div>
 
           <div class="card">
             <h3>HPC &amp; Performance</h3>
             <ul>
-              <li>MPI domain decomposition &amp; load balancing</li>
-              <li>Shared memory: OpenMP (or equivalent)</li>
-              <li>GPU acceleration (CUDA / OpenACC / Kokkos/RAJA)</li>
-              <li>Roofline/perf analysis, Nsight/VTune style tools</li>
-              <li>Vectorization, cache &amp; memory-bandwidth tuning</li>
+              <li>GPU acceleration with CUDA, OpenMP offload, Kokkos, Raja</li>
+              <li>MPI + OpenMP hybrid parallelism on large clusters</li>
+              <li>Performance-portable design across CPUs and GPUs</li>
+              <li>Nsight Compute/Systems, profiling &amp; roofline-style analysis</li>
+              <li>Workflow automation on PBS/Slurm HPC environments</li>
             </ul>
           </div>
 
           <div class="card">
-            <h3>Programming</h3>
+            <h3>Programming &amp; Tooling</h3>
             <ul>
-              <li>C++ (modern, RAII, templates, STL)</li>
-              <li>Python (scientific stack, tooling, automation)</li>
-              <li>Fortran (legacy CFD codebases)</li>
-              <li>Bash &amp; Linux/HPC environments</li>
-              <li>Git, CMake, CI workflows</li>
+              <li>Modern C++ (17/20), Fortran, Python, MATLAB, Bash</li>
+              <li>Pybind11 bindings &amp; mixed C++/Fortran/Python interfaces</li>
+              <li>CMake-based builds, Git/SVN, VS Code</li>
+              <li>Data analysis &amp; plotting (Python, Tecplot, FieldView)</li>
+              <li>Linux HPC tools and scripting</li>
             </ul>
           </div>
 
           <div class="card">
-            <h3>Tools &amp; Ecosystem</h3>
+            <h3>Domain &amp; Methods</h3>
             <ul>
-              <li>GitHub / GitLab, GitHub Actions</li>
-              <li>Slurm &amp; HPC schedulers</li>
-              <li>Paraview/Tecplot for post-processing</li>
-              <li>LaTeX for papers &amp; reports</li>
-              <li>Docker/containers for reproducible runs</li>
+              <li>Rotorcraft &amp; tiltrotor aerodynamics</li>
+              <li>Aeroacoustics &amp; noise-reduction concepts</li>
+              <li>Fracture-risk &amp; structural-safety CFD coupling</li>
+              <li>Uncertainty quantification &amp; sampling (LHS)</li>
+              <li>Technical writing &amp; conference/journal publications</li>
             </ul>
           </div>
         </div>
@@ -142,16 +147,40 @@
         <h2>Experience</h2>
         <div class="timeline">
 
-          <!-- Duplicate/adjust entries as needed -->
           <article class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-              <h3>CFD / HPC Engineer – [Company or Lab]</h3>
-              <span class="timeline-meta">[Dates] · [Location]</span>
+              <h3>CFD Developer – Army Comp. Aeromechanics Lab (NASA Ames)</h3>
+              <span class="timeline-meta">Jun 2019 – Present · Moffett Field, CA</span>
               <ul>
-                <li>Developed and maintained GPU-accelerated structured CFD solvers for compressible Navier–Stokes flows.</li>
-                <li>Implemented and verified high-order reconstruction schemes (e.g., MUSCL, WENO-type) on curvilinear grids.</li>
-                <li>Profiled and optimized kernels, achieving significant speed-ups vs. baseline CPU implementations.</li>
+                <li>
+                  Architect &amp; lead developer of a performance-portable overset structured
+                  curvilinear compressible flow near-body solver—&gt;2× faster than other
+                  well-known GPU flow solvers (134M cells/s throughput)—now being integrated
+                  into the CREATE-AV Helios framework.
+                </li>
+                <li>
+                  Integrated GPU-accelerated OVERFLOW into Helios with Pybind11 bindings and
+                  GPU-enabled Fortran modules, enabling zero-copy near-body CFD on GPUs.
+                </li>
+                <li>
+                  Automated end-to-end OVERFLOW mesh and input generation in Helios, cutting
+                  analyst setup time by ~95%.
+                </li>
+                <li>
+                  Led high-fidelity CFD simulations of six-degree-of-freedom store separation
+                  for the Apache helicopter and a rotor-wake accuracy campaign achieving
+                  unprecedented agreement with stereo-PIV measurements.
+                </li>
+                <li>
+                  Built a CFD framework for V-22 tiltrotor ↔ ship-deck simulations, validating
+                  rotor loads and air-frame download to ≈5% of flight-test data while cutting
+                  compute cost by 83% (6× speed-up).
+                </li>
+                <li>
+                  Delivered high-fidelity CFD for Sikorsky’s FARA competitive prototype that
+                  matched wind-tunnel data within test uncertainty.
+                </li>
               </ul>
             </div>
           </article>
@@ -159,12 +188,61 @@
           <article class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-              <h3>Research Assistant – [University / Group]</h3>
-              <span class="timeline-meta">[Dates] · [Location]</span>
+              <h3>Research Scientist – AFRL Computational Sciences Center</h3>
+              <span class="timeline-meta">Jul 2018 – Jun 2019 · Dayton, OH</span>
               <ul>
-                <li>Conducted CFD studies of [application: rotorcraft, airfoils, wake interactions, etc.].</li>
-                <li>Validated simulations against experimental data and peer codes.</li>
-                <li>Authored publications and presented results at technical conferences.</li>
+                <li>
+                  Integrated Mean-Flow Perturbation (MFP) analysis into FDL3DI, enabling
+                  fast, embedded linear-stability studies of complex 3-D flows.
+                </li>
+                <li>
+                  Applied MFP to a Re = 2×10<sup>5</sup>, AR 4 wingtip vortex to isolate
+                  least-stable modes, guiding actuator placement, frequency, and spatial
+                  modulation for future flow-control devices.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Graduate Research Assistant – Comp. Aerodynamics &amp; Aeroacoustics Lab</h3>
+              <span class="timeline-meta">Jan 2016 – May 2019 · Iowa State University</span>
+              <ul>
+                <li>
+                  Extended FDL3DI to handle 90° corners via automated stair-step edge
+                  detection and adaptive filter order, enabling accurate LES on complex
+                  geometries.
+                </li>
+                <li>
+                  Re-engineered OpenMP load balancing, cutting simulation wall-clock
+                  time by 55% on a 2K-core cluster.
+                </li>
+                <li>
+                  Conducted wall-resolved LES and aeroacoustic studies of owl-inspired,
+                  low-noise airfoils and finlet fences, demonstrating validated reductions
+                  in surface-pressure unsteadiness and far-field noise.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>CFD Application Engineer Intern – Exa Corporation</h3>
+              <span class="timeline-meta">Jul 2015 – Jan 2016 · Burlington, MA</span>
+              <ul>
+                <li>
+                  Prepared watertight heavy-vehicle meshes and ran parametric PowerFLOW
+                  CFD studies across design variants, delivering drag-trade guidance.
+                </li>
+                <li>
+                  Simulated commercial-bus cabin airflow and built VB/Python automation
+                  to generate CFD result presentations, reducing report prep from days
+                  to hours.
+                </li>
               </ul>
             </div>
           </article>
@@ -180,52 +258,56 @@
         <div class="cards-grid">
 
           <article class="card project-card">
-            <h3>GPU-Accelerated Structured CFD Solver</h3>
+            <h3>Performance-Portable Overset Near-Body Solver (Helios)</h3>
             <p>
-              Performance-portable compressible flow solver on structured/curvilinear grids,
-              targeting both CPUs and GPUs with a single codebase.
+              Architected and led development of a performance-portable overset structured
+              curvilinear compressible flow near-body solver integrated into CREATE-AV
+              Helios, achieving &gt;2× speed-up vs other GPU flow solvers (134M cells/s)
+              while maintaining high-fidelity rotorcraft predictions on GPUs.
             </p>
             <ul class="tag-list">
               <li>CFD</li>
               <li>GPU</li>
-              <li>C++</li>
-              <li>MPI</li>
+              <li>C++ / Fortran</li>
+              <li>Pybind11</li>
             </ul>
-            <!-- Replace with actual GitHub link -->
-            <a class="card-link" href="https://github.com/yourusername/your-cfd-solver" target="_blank" rel="noopener">
-              View on GitHub →
+            <a class="card-link" href="https://github.com/bodlinga" target="_blank" rel="noopener">
+              View related work on GitHub →
             </a>
           </article>
 
           <article class="card project-card">
-            <h3>High-Order Metric &amp; Reconstruction Study</h3>
+            <h3>Rotor Wake &amp; Tiltrotor / Ship-Deck Campaigns</h3>
             <p>
-              Investigated stability and accuracy of high-order metric reconstruction and flux
-              schemes on curvilinear grids for challenging benchmark cases.
+              Led rotor-wake accuracy and V-22 tiltrotor / ship-deck CFD campaigns, identifying
+              numerical-error sources in rotor-wake predictions and validating key loads and
+              download metrics to within ~5% of flight-test data while reducing compute cost
+              by 83%.
             </p>
             <ul class="tag-list">
-              <li>High-Order</li>
-              <li>Numerics</li>
-              <li>Python</li>
+              <li>Rotorcraft</li>
+              <li>Validation</li>
+              <li>Helios / OVERFLOW</li>
             </ul>
-            <a class="card-link" href="https://github.com/yourusername/metrics-study" target="_blank" rel="noopener">
-              View on GitHub →
+            <a class="card-link" href="https://www.linkedin.com/in/andrew-bodling" target="_blank" rel="noopener">
+              See project details on LinkedIn →
             </a>
           </article>
 
           <article class="card project-card">
-            <h3>CFD Post-Processing &amp; Automation Toolkit</h3>
+            <h3>High-Fidelity LES &amp; Aeroacoustics of Owl-Inspired Airfoils</h3>
             <p>
-              Python utilities for automated mesh/solution comparison, error analysis,
-              and publication-ready plots across multiple CFD codes.
+              Conducted wall-resolved LES and aeroacoustic analysis of bio-inspired airfoils
+              and finlet fences motivated by owl down feathers, demonstrating reduced surface
+              pressure unsteadiness and far-field noise—published in leading journals.
             </p>
             <ul class="tag-list">
-              <li>Python</li>
-              <li>Data Analysis</li>
-              <li>Matplotlib</li>
+              <li>LES</li>
+              <li>Aeroacoustics</li>
+              <li>Research</li>
             </ul>
-            <a class="card-link" href="https://github.com/yourusername/cfd-tools" target="_blank" rel="noopener">
-              View on GitHub →
+            <a class="card-link" href="#publications">
+              Linked to journal publications →
             </a>
           </article>
 
@@ -236,23 +318,40 @@
     <!-- Publications -->
     <section id="publications" class="section">
       <div class="container">
-        <h2>Publications &amp; Talks</h2>
+        <h2>Publications &amp; Selected Papers</h2>
         <p class="section-intro">
-          A selection of relevant technical publications and presentations.
+          Full publication list available on LinkedIn or by request. A small subset is listed here.
         </p>
         <ul class="pub-list">
-          <!-- Replace these with your real items -->
           <li>
-            <strong>[Author], [Your Name]</strong>,
-            “Title of Your CFD / HPC Paper,”
-            <em>Conference or Journal Name</em>, Year.
-            <span class="pub-extra">Topics: high-order methods, overset grids, GPU performance.</span>
+            <strong>Bodling, A.</strong>, Schwarz, C., Wolf, C.C., &amp; Gardner, A.D. (2024).
+            Enhancing Numerical Accuracy in the Prediction of Rotor Wake Vortex Structures.
+            <em>Physics of Fluids</em>, 36(3), 037137.
+            <span class="pub-extra">High-fidelity rotor wake CFD with improved numerical accuracy.</span>
           </li>
           <li>
-            <strong>[Your Name]</strong>,
-            “Talk Title,”
-            Presented at <em>Conference / Workshop</em>, Year.
-            <span class="pub-extra">Focus: large-scale simulation on heterogeneous architectures.</span>
+            <strong>Bodling, A.</strong>, Sharma, A. (2019).
+            Numerical Investigation of Noise Reduction Mechanisms in a Bio-Inspired Airfoil.
+            <em>Journal of Sound and Vibration</em>, 453, 314–327.
+            <span class="pub-extra">Detailed aeroacoustic study of low-noise airfoil concepts.</span>
+          </li>
+          <li>
+            <strong>Bodling, A.</strong>, Sharma, A. (2018).
+            Numerical Investigation of Low-Noise Airfoils Inspired by the Down Coat of Owls.
+            <em>Bioinspiration &amp; Biomimetics</em>, 14(1). (Featured article).
+            <span class="pub-extra">Featured work on owl-inspired low-noise airfoils.</span>
+          </li>
+          <li>
+            <strong>Bodling, A.</strong>, Zagaris, G., Jude, D., Sitaraman, J., &amp; Hosseinverdi, S. (2024).
+            Development of a Performance Portable Compressible Flow Solver on Structured Curvilinear Grids.
+            <em>AIAA Aviation 2024 Forum</em>, Las Vegas, NV, USA.
+          </li>
+          <li>
+            Zagaris, G., Holst, K., Sitaraman, J., Hosseinverdi, S., Tyson, W., Lakshminarayan, V.,
+            <strong>Bodling, A.</strong>, et al. (2025).
+            Mint: A Performance Portable Mesh Data Model Enabling the Development of Next-Generation
+            Massively Parallel Multi-Physics Applications.
+            <em>AIAA SciTech 2025 Forum</em>, Orlando, FL, USA.
           </li>
         </ul>
       </div>
@@ -264,25 +363,24 @@
         <h2>Contact</h2>
         <p>
           I’m open to roles in CFD, HPC, scientific computing, and performance engineering.
-          Feel free to reach out if you’d like to discuss opportunities or collaborations.
+          If you’d like to discuss opportunities or collaborations, feel free to reach out.
         </p>
         <div class="contact-grid">
           <div>
             <h3>Email</h3>
-            <!-- Replace with your email -->
-            <p><a href="mailto:you@example.com">you@example.com</a></p>
+            <p><a href="mailto:andrewbodling@gmail.com">andrewbodling@gmail.com</a></p>
           </div>
           <div>
             <h3>Links</h3>
             <ul class="links-list">
-              <li><a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a></li>
-              <li><a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a></li>
+              <li><a href="https://github.com/bodlinga" target="_blank" rel="noopener">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/andrew-bodling" target="_blank" rel="noopener">LinkedIn</a></li>
             </ul>
           </div>
           <div>
             <h3>Resume</h3>
             <p>
-              <a href="andrew-bodling-resume.pdf" target="_blank" rel="noopener">
+              <a href="assets/andrew-bodling-resume.pdf" target="_blank" rel="noopener">
                 Download Resume (PDF)
               </a>
             </p>
@@ -294,7 +392,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <small>&copy; <span id="year"></span> [Your Name]. All rights reserved.</small>
+      <small>&copy; <span id="year"></span> Andrew Bodling. All rights reserved.</small>
     </div>
   </footer>
 
