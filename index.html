@@ -29,6 +29,17 @@
   <main>
     <!-- Hero / Intro -->
     <section class="hero">
+    <!-- New top-centered photo row -->
+    <div class="container hero-photo-top">
+      <div class="hero-photo-wrapper">
+        <img
+          src="assets/andrew-photo3.jpg"
+          alt="Portrait of Andrew Bodling"
+          class="hero-photo"
+        >
+      </div>
+    </div>
+
       <div class="container hero-inner">
         <div class="hero-text">
           <h1>Hi, I’m <span class="accent">Andrew Bodling</span>.</h1>
@@ -37,9 +48,8 @@
             high-fidelity solvers for DoD and industry.
           </p>
           <p class="hero-sub">
-            Architect and lead developer of a performance-portable overset structured
-            curvilinear compressible flow near-body solver now being integrated into
-            CREATE-AV Helios—delivering GPU-accelerated, production-scale CFD.
+            Aim to lead the development of next-generation, GPU-accelerated CFD solvers to 
+            deliver breakthrough simulation performance and fidelity in aerospace applications.
           </p>
           <div class="hero-actions">
             <a class="btn primary" href="assets/andrew-bodling-resume.pdf" target="_blank" rel="noopener">
@@ -51,20 +61,11 @@
           </div>
         </div>
         <div class="hero-side">
-          <!-- New photo block -->
-          <div class="hero-photo-wrapper">
-            <img
-              src="assets/andrew-photo2.jpg"
-              alt="Portrait of Andrew Bodling"
-              class="hero-photo"
-            >
-          </div>
-
           <!-- Existing Snapshot card -->
           <div class="hero-card">
             <h2>Snapshot</h2>
             <ul>
-              <li><strong>Focus:</strong> Rotorcraft aerodynamics/aeroacoustics, HPC CFD, GPU solvers</li>
+              <li><strong>Focus:</strong> GPU Development, High Fidelity CFD, Aerodynamics & Aeroacoustics</li>
               <li><strong>Languages:</strong> C++17/20, Fortran, Python, MATLAB, Bash</li>
               <li><strong>Parallel:</strong> CUDA, MPI, OpenMP, Kokkos, Raja, OpenACC, Mint</li>
               <li><strong>CFD Stack:</strong> CREATE-AV Helios, OVERFLOW, FUN3D, FDL3DI, kCFD, PowerFLOW</li>
@@ -108,7 +109,7 @@
             <ul>
               <li>Compressible Navier–Stokes (steady &amp; unsteady)</li>
               <li>Rotor wake aerodynamics &amp; tiltrotor interactions</li>
-              <li>Finite volume / finite difference, LES / DES</li>
+              <li>Finite volume / finite difference, Large Eddy Simulation (LES) / Delayed Detached Eddy Simulation (DDES)</li>
               <li>High-order schemes (MUSCL, WENO, high-order filtering)</li>
               <li>Overset / Chimera &amp; structured curvilinear grids</li>
             </ul>
@@ -159,36 +160,32 @@
           <article class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-              <h3>CFD Developer – Army Comp. Aeromechanics Lab (NASA Ames)</h3>
-              <span class="timeline-meta">Jun 2019 – Present · Moffett Field, CA</span>
+              <h3>CFD Developer – Army Comp. Aeromechanics Lab – NASA Ames</h3>
+              <span class="timeline-meta">Jun ‘19 – Present · Moffett Field, CA</span>
               <ul>
                 <li>
-                  Architect &amp; lead developer of a performance-portable overset structured
-                  curvilinear compressible flow near-body solver—&gt;2× faster than other
-                  well-known GPU flow solvers (134M cells/s throughput)—now being integrated
-                  into the CREATE-AV Helios framework.
+                  Architect &amp; lead developer of a performance-portable overset structured curvilinear compressible flow near-body solver—2 × faster than other well-known GPU flow solvers (134 M cells/s throughput) — now being integrated into CREATE-AV Helios
                 </li>
                 <li>
-                  Integrated GPU-accelerated OVERFLOW into Helios with Pybind11 bindings and
-                  GPU-enabled Fortran modules, enabling zero-copy near-body CFD on GPUs.
+                  Integrated GPU-accelerated OVERFLOW into the Helios framework, including Pybind11-based bindings and new GPU-enabled Fortran modules to support zero-copy near-body CFD on GPUs
                 </li>
                 <li>
-                  Automated end-to-end OVERFLOW mesh and input generation in Helios, cutting
-                  analyst setup time by ~95%.
+                  Automated end-to-end OVERFLOW mesh &amp; input generation in Helios, cutting analyst setup time 95%
                 </li>
                 <li>
-                  Led high-fidelity CFD simulations of six-degree-of-freedom store separation
-                  for the Apache helicopter and a rotor-wake accuracy campaign achieving
-                  unprecedented agreement with stereo-PIV measurements.
+                  Implemented high-order filtering scheme into Cart-p, which proved superior to current AD scheme
                 </li>
                 <li>
-                  Built a CFD framework for V-22 tiltrotor ↔ ship-deck simulations, validating
-                  rotor loads and air-frame download to ≈5% of flight-test data while cutting
-                  compute cost by 83% (6× speed-up).
+                  Led high-fidelity CFD simulations of six-degree-of-freedom store separation for the Apache helicopter
                 </li>
                 <li>
-                  Delivered high-fidelity CFD for Sikorsky’s FARA competitive prototype that
-                  matched wind-tunnel data within test uncertainty.
+                  Led rotor-wake accuracy campaign: identified sources of numerical error influencing the prediction of the rotor wake vortex system, and achieved unprecedented CFD agreement with stereo-PIV measurements
+                </li>
+                <li>
+                  Built and automated the CFD framework (Helios + scripted inputs) for V-22 tiltrotor . ship-deck simulations, validating rotor loads/air-frame download to ˜ 5 % of flight-test data while cutting compute cost 83 % (6 × speed-up)
+                </li>
+                <li>
+                  Delivered high-fidelity CFD predictions for Sikorsky’s FARA competitive-prototype that matched wind-tunnel data within test uncertainty, informing design decisions
                 </li>
               </ul>
             </div>
@@ -198,16 +195,13 @@
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <h3>Research Scientist – AFRL Computational Sciences Center</h3>
-              <span class="timeline-meta">Jul 2018 – Jun 2019 · Dayton, OH</span>
+              <span class="timeline-meta">July ‘18 – Jun ‘19 · Dayton, OH</span>
               <ul>
                 <li>
-                  Integrated Mean-Flow Perturbation (MFP) analysis into FDL3DI, enabling
-                  fast, embedded linear-stability studies of complex 3-D flows.
+                  Integrated Mean-Flow Perturbation (MFP) analysis into FDL3DI, enabling fast, embedded linear-stability studies of complex 3-D flows
                 </li>
                 <li>
-                  Applied MFP to a Re = 2×10<sup>5</sup>, AR 4 wingtip vortex to isolate
-                  least-stable modes, guiding actuator placement, frequency, and spatial
-                  modulation for future flow-control devices.
+                  Applied MFP to a Re = 2 × 105, AR 4 wingtip vortex, isolating the least-stable mode and frequency at the trailing-edge and within the incipient vortex core—results now guide actuator placement, frequency, and spatial modulation for future flow-control devices
                 </li>
               </ul>
             </div>
@@ -216,22 +210,20 @@
           <article class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-              <h3>Graduate Research Assistant – Comp. Aerodynamics &amp; Aeroacoustics Lab</h3>
-              <span class="timeline-meta">Jan 2016 – May 2019 · Iowa State University</span>
+              <h3>Graduate RA – Comp. Aerodynamics &amp; Aeroacoustics Lab</h3>
+              <span class="timeline-meta">Jan ‘16 – May ‘19 · Ames, IA</span>
               <ul>
                 <li>
-                  Extended FDL3DI to handle 90° corners via automated stair-step edge
-                  detection and adaptive filter order, enabling accurate LES on complex
-                  geometries.
+                  Extended FDL3DI to handle 90° corners via automated stair-step edge detection and adaptive filter order, enabling accurate LES on complex geometries
                 </li>
                 <li>
-                  Re-engineered OpenMP load balancing, cutting simulation wall-clock
-                  time by 55% on a 2K-core cluster.
+                  Re-engineered OpenMP load balancing, cutting simulation wall-clock time by 55 % on a 2 K-core cluster
                 </li>
                 <li>
-                  Conducted wall-resolved LES and aeroacoustic studies of owl-inspired,
-                  low-noise airfoils and finlet fences, demonstrating validated reductions
-                  in surface-pressure unsteadiness and far-field noise.
+                  Validated Ffowcs Williams-Hawkings solver &amp; applied it to trailing-edge noise-reduction designs
+                </li>
+                <li>
+                  Pioneered wall-resolved LES of airfoils with finlet fences inspired by owl down feathers—demonstrating validated reductions in surface-pressure unsteadiness and far-field noise (greater for taller fences) via increased boundary-layer source–scatter-edge separation
                 </li>
               </ul>
             </div>
@@ -241,16 +233,26 @@
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <h3>CFD Application Engineer Intern – Exa Corporation</h3>
-              <span class="timeline-meta">Jul 2015 – Jan 2016 · Burlington, MA</span>
+              <span class="timeline-meta">July. ‘15 – Jan. ‘16 · Burlington, MA</span>
               <ul>
                 <li>
-                  Prepared watertight heavy-vehicle meshes and ran parametric PowerFLOW
-                  CFD studies across design variants, delivering drag-trade guidance.
+                  Prepared watertight heavy-vehicle meshes (ANSA &amp; PowerDELTA) and ran parametric PowerFLOW CFD studies across design variants, delivering data-driven drag-trade guidance to customers
                 </li>
                 <li>
-                  Simulated commercial-bus cabin airflow and built VB/Python automation
-                  to generate CFD result presentations, reducing report prep from days
-                  to hours.
+                  Performed PowerFLOW simulations to optimize commercial-bus cabin airflow and built VB/Python scripts to auto-generate CFD result presentations—cutting report prep from days to hours
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Graduate RA – Exp. Aero. Lab &amp; Undergrad. RA– Comp. Reliability Lab</h3>
+              <span class="timeline-meta">Sep ’12 – May ‘15</span>
+              <ul>
+                <li>
+                  PIV studies &amp; implemented memory-less Latin Hypercube Sampling in the FAA’s SMART tool
                 </li>
               </ul>
             </div>
@@ -263,13 +265,15 @@
     <!-- Projects -->
     <section id="projects" class="section section-alt">
       <div class="container">
-        <h2>Selected Projects</h2>
-        <div class="cards-grid">
+        <h2>Projects</h2>
+
+        <h3>Selected Development Projects</h3>
+        <div class="cards-grid projects-fullwidth">
 
           <article class="card project-card">
-            <h3>Performance-Portable Overset Near-Body Solver (Helios)</h3>
+            <h3>Performance-Portable Overset Near-Body Solver (CREATE-AV Helios)</h3>
             <p>
-              Architected and led development of a performance-portable overset structured
+              Architect &amp; lead developer of a performance-portable overset structured
               curvilinear compressible flow near-body solver integrated into CREATE-AV
               Helios, achieving &gt;2× speed-up vs other GPU flow solvers (134M cells/s)
               while maintaining high-fidelity rotorcraft predictions on GPUs.
@@ -280,58 +284,222 @@
               <li>C++ / Fortran</li>
               <li>Pybind11</li>
             </ul>
-            <a class="card-link" href="https://github.com/bodlinga" target="_blank" rel="noopener">
-              View related work on GitHub →
+            <a class="card-link" href="https://www.linkedin.com/posts/andrew-bodling_had-a-great-time-last-week-presenting-my-activity-7228622829628313602-YFxr?utm_source=share&utm_medium=member_desktop&rcm=ACoAABDvI9IBC0rxICxlp76DvyZ8SZpTd1ThVQ4" target="_blank" rel="noopener">
+              Presentation Video →
             </a>
           </article>
 
           <article class="card project-card">
-            <h3>Rotor Wake &amp; Tiltrotor / Ship-Deck Campaigns</h3>
+            <h3>GPU-Accelerated OVERFLOW Integration in Helios</h3>
             <p>
-              Led rotor-wake accuracy and V-22 tiltrotor / ship-deck CFD campaigns, identifying
-              numerical-error sources in rotor-wake predictions and validating key loads and
-              download metrics to within ~5% of flight-test data while reducing compute cost
-              by 83%.
+              Designed and implemented a GPU-native integration of OVERFLOW into the Helios framework by replacing file-based coupling with a 
+              C++/Pybind11 API layer and refactoring legacy Fortran modules so grid and solution arrays remain resident on the GPU across time steps. 
+              Exposed zero-copy interfaces for overset interpolation and boundary-condition updates, allowing Helios to orchestrate the near-body solver
+              from Python while the heavy CFD kernels run entirely on the device—eliminating CPU–GPU data marshaling bottlenecks and significantly 
+              improving end-to-end performance.
+            </p>
+            <ul class="tag-list">
+              <li>CFD</li>
+              <li>GPU</li>
+              <li>OVERFLOW</li>
+              <li>Pybind11</li>
+            </ul>
+          </article>
+
+          <article class="card project-card">
+            <h3>Automated OVERFLOW Mesh &amp; Input Generation</h3>
+            <p>
+              Automated end-to-end OVERFLOW mesh &amp; input generation in Helios, cutting analyst setup time 95%
+            </p>
+            <ul class="tag-list">
+              <li>Automation</li>
+              <li>Helios</li>
+              <li>OVERFLOW</li>
+            </ul>
+          </article>
+
+          <article class="card project-card">
+            <h3>Mean-Flow Perturbation Stability Analysis in FDL3DI</h3>
+            <p>
+              Implemented the Mean-Flow Perturbation (MFP) linear-stability framework inside the LES code FDL3DI to analyze how complex 3-D flows respond to small disturbances. 
+              The work focused on an aspect-ratio-four, NACA0012 wingtip at Re = 2 × 10^5 and 12° incidence, where strong tip vortices drive induced drag. By embedding MFP directly into the flow 
+              solver, we were able to efficiently extract least-stable mode shapes and frequencies in the tip-vortex system, including a dominant mode near the trailing edge and a second region 
+              near incipient vortex separation. These results provide practical guidance for future flow-control actuators (e.g., winglets or periodic forcing) by informing where to place them 
+              and which frequencies and spatial wavelengths are most effective.
+            </p>
+            <ul class="tag-list">
+              <li>FDL3DI</li>
+              <li>Stability Analysis</li>
+              <li>MFP</li>
+            </ul>
+            <a class="card-link" href="#conference-papers">
+              Link to conference publications →
+            </a>
+            <img
+                src="assets/tipvortex.jpg"
+                alt="Mean-Flow Perturbation Stability Analysis in FDL3DI"
+                style="width:25%;height:auto;border-radius:12px;margin-top:0.6rem;display:block;margin-left:auto;margin-right:auto;"
+            >
+            <img
+                src="assets/tipvortex2.jpg"
+                alt="Mean-Flow Perturbation Stability Analysis in FDL3DI"
+                style="width:55%;height:auto;border-radius:12px;margin-top:0.6rem;display:block;margin-left:auto;margin-right:auto;"
+            >
+          </article>
+
+          <article class="card project-card">
+            <h3>High-Fidelity LES of Stair-Step Finlet Geometries for Trailing-Edge Noise Reduction</h3>
+            <p>
+              The goal of my PhD work was to understand the trailing edge noise reduction mechanisms of bioinspired finlet designs from previous experiments 
+              at Virginia Tech. While there have been several numerical studies investigating the noise reduction mechanisms of trailing edge serrations, 
+              the high fidelity simulations done to model finlets in this project were the first of its kind. For this project, I pioneered wall-resolved 
+              LES of airfoils with finlet fences inspired by owl down feathers. The fence finlets used in the experiment are flushed with the airfoil and rise
+              at a very shallow angle from the airfoil. Generating a structured mesh around such a geometry while maintaining a reasonable mesh quality and manageable 
+              cell count is nearly impossible. Therefore, alternate geometry configurations were sought for which ‘practical’ meshes (i.e. meshes with manageable grid 
+              count and cell aspect ratios, skewness, etc that do not render the numerical algorithm unstable) could be obtained. The fences were modeled as a ‘stair-step’ 
+              geometry by varying the height of the fences in discrete steps (as opposed to continuous variation in the experiment model) along the chord. 
+              The massively parallel LES code, FDL3DI, was extended to handle 90° corners via automated stair-step edge detection and adaptive filter order, enabling accurate LES on 
+              complex geometries. Also, the OpenMP load balancing approach was optimized for the stair-step geometry, cutting simulation wall-clock time by 55 % on a 2 K-core cluster. 
+              A Ffowcs Williams-Hawkings solver was validated and applied to the trailing-edge noise-reduction designs. 
+            </p>
+            <ul class="tag-list">
+              <li>LES</li>
+              <li>High-Order Methods</li>
+              <li>FW-H</li>
+            </ul>
+            <a class="card-link" href="#dissertation">
+              Link to PhD dissertation (see Appendix B & C) →
+            </a>
+            <div class="project-media">
+              <img
+                src="assets/fence-finlets-combined.png"
+                alt="High-Order Extensions to FDL3DI &amp; FW-H Solver"
+                style="width:50%;height:auto;border-radius:12px;margin-top:0.6rem;display:block;margin-left:auto;margin-right:auto;"
+              >
+            </div>            
+          </article>
+
+        </div>
+
+        <h3>Selected CFD Application Projects</h3>
+        <div class="cards-grid projects-fullwidth">
+
+          <article class="card project-card">
+            <h3>Rotor-Wake Accuracy Campaign</h3>
+            <p>
+              A common phenomenon in modern high-fidelity CFD simulations is the breakdown of the primary vortex system into secondary vortices 
+              (see figures below). The goal of this research was to investigate the sources of error that cause discrepancies between the predicted 
+              and measured vortex system of a two-bladed rotor. We wanted to not only identify the sources of numerical error from the discretized 
+              Navier-Stokes equations, but also demonstrate how subtle differences between the geometry in the experiment and simulation could lead 
+              to differences in the predicted and measured vortex system. For example, we showed that dissimilarities in the blade pitch angle among 
+              the blades in the experiment, if not modelled in the simulations, can result not only in differences in vortex pairing but also in the 
+              decay of the secondary vortices. This work was published in three peer-reviewed journals including Physics of Fluids. 
             </p>
             <ul class="tag-list">
               <li>Rotorcraft</li>
               <li>Validation</li>
               <li>Helios / OVERFLOW</li>
             </ul>
-            <a class="card-link" href="https://www.linkedin.com/in/andrew-bodling" target="_blank" rel="noopener">
-              See project details on LinkedIn →
+            <a class="card-link" href="#publications">
+              Link to journal publications →
             </a>
+            <div class="project-media">
+              <img
+                src="assets/worms_intro.png"
+                alt="Rotor-Wake Accuracy Campaign"
+                style="width:60%;height:auto;border-radius:12px;margin-top:0.6rem;display:block;margin-left:auto;margin-right:auto;"
+              >
+              <video src="assets/worms1.mp4" controls width="80%" style="display:block;margin:0.6rem auto 0;"></video>
+              <video src="assets/worms2.mp4" controls width="80%" style="display:block;margin:0.6rem auto 0;"></video>
+              <video src="assets/worms3.mp4" controls width="80%" style="display:block;margin:0.6rem auto 0;"></video>
+              <video src="assets/worms4.mp4" controls width="80%" style="display:block;margin:0.6rem auto 0;"></video>
+              <video src="assets/worms5.mp4" controls width="80%" style="display:block;margin:0.6rem auto 0;"></video>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <h3>V-22 Tiltrotor Ship-Deck Simulations</h3>
+            <p>
+              The purpose of this project was to investigate the aerodynamic interaction between a tiltrotor helicopter and a shipboard. For this project, I 
+              worked with the Office of Naval Research to build and automate the CFD framework (Helios + scripted inputs) for the V-22 tiltrotor ship-deck simulations, validating 
+              rotor loads/air-frame download to ~5 % of flight-test data while cutting compute cost 83 % (6 × speed-up).
+            </p>
+            <ul class="tag-list">
+              <li>V-22</li>
+              <li>Ship-Deck</li>
+              <li>Helios</li>
+            </ul>
+            <a class="card-link" href="https://www.army.mil/article/258590/army_aviation_missile_center_teams_with_navy_to_model_and_simulate_flight_testing?linkId=174075669" target="_blank" rel="noopener">
+              Army / Navy article →
+            </a><br>
+            <a class="card-link" href="#conference-papers">
+              Link to conference publications →
+            </a>
+            <div class="project-media">
+              <img
+                src="assets/v22-sim.jpg" alt="V-22 tiltrotor ship-deck CFD simulation" 
+                style="width:75%;height:auto;border-radius:12px;margin-top:0.6rem;display:block;margin-left:auto;margin-right:auto;"
+              >
+
+            </div>
           </article>
 
           <article class="card project-card">
             <h3>High-Fidelity LES &amp; Aeroacoustics of Owl-Inspired Airfoils</h3>
             <p>
-              Conducted wall-resolved LES and aeroacoustic analysis of bio-inspired airfoils
-              and finlet fences motivated by owl down feathers, demonstrating reduced surface
-              pressure unsteadiness and far-field noise—published in leading journals.
+              The goal of my PhD work was to understand the trailing edge noise reduction mechanisms of bioinspired finlet designs from previous experiments 
+              at Virginia Tech. While there have been several numerical studies investigating the noise reduction mechanisms of trailing edge serrations, 
+              the high fidelity simulations done to model finlets in this project were the first of its kind. For this project, I pioneered wall-resolved 
+              LES of airfoils with finlet fences inspired by owl down feathers—demonstrating validated reductions in surface-pressure unsteadiness and 
+              far-field noise (greater for taller fences). Farfield noise was shown to decrease due to an increase in the distance between the 
+              turbulent kinetic energy in the boundary-layer turbulence and the trailing edge as well as a decrease in the spanwise coherence of the 
+              turbulence. This work was published in Bioinspiration and Biomimetics and the Journal of Sound and Vibration.
             </p>
             <ul class="tag-list">
               <li>LES</li>
               <li>Aeroacoustics</li>
               <li>Research</li>
             </ul>
+            <a class="card-link" href="https://www.youtube.com/watch?v=HTSiHNdUYCU" target="_blank" rel="noopener">
+              Presentation Video →
+            </a><br>
             <a class="card-link" href="#publications">
-              Linked to journal publications →
+              Link to journal publications →
+            </a><br>
+            <a class="card-link" href="#dissertation">
+              Link to PhD dissertation →
             </a>
+            <div class="project-media">
+              <img
+               src="assets/finlet-tke-comp.jpg" alt="High-Fidelity LES &amp; Aeroacoustics of Owl-Inspired Airfoils" 
+               style="width:80%;height:auto;border-radius:12px;margin-top:0.6rem;display:block;margin-left:auto;margin-right:auto;"
+              >
+            </div>
+            <div class="project-media">
+              <img 
+                src="assets/finlet-farfield-noise-comp.jpg" alt="High-Fidelity LES &amp; Aeroacoustics of Owl-Inspired Airfoils" 
+                style="width:80%;height:auto;border-radius:12px;margin-top:0.6rem;display:block;margin-left:auto;margin-right:auto;"
+              >
+            </div>
+            <div class="project-media">
+              <img 
+                src="assets/finlet-spanwise-coherence.jpg" alt="High-Fidelity LES &amp; Aeroacoustics of Owl-Inspired Airfoils" 
+                style="width:80%;height:auto;border-radius:12px;margin-top:0.6rem;display:block;margin-left:auto;margin-right:auto;"
+              >
+            </div>
           </article>
 
         </div>
       </div>
     </section>
 
+
+
+
     <!-- Publications -->
     <section id="publications" class="section">
       <div class="container">
         <h2>Publications</h2>
-        <p class="section-intro">
-          Journal articles and conference papers based on my Google Scholar profile.
-          Newest publications are listed first.
-        </p>
 
         <h3>Journal Articles</h3>
         <ul class="pub-list">
@@ -385,18 +553,19 @@
           </li>
         </ul>
 
-        <h3>Conference Papers &amp; Proceedings</h3>
+        <h3 id="conference-papers">Conference Papers &amp; Proceedings</h3>
+
         <ul class="pub-list">
           <li>
-            <strong>A.M. Moushegian, D.M. Farish, E.W. Hayden, R.W.T. Lead, A.L. Bodling</strong><br>
-            Investigation of Modeling Approaches to High-Fidelity Computational Predictions of Tiltrotor/Obstacle Aerodynamic Interactions.<br>
-            In: <em>Vertical Flight Society 81st Annual Forum &amp; Technology Display (FORUM 81)</em>, 2025.<br>
-            <a class="pub-link" href="assets/Andrew-Bodling-vfs81-2025.pdf" target="_blank" rel="noopener">
+            <strong>A. Bodling, G. Zagaris, D. Jude, J. Sitaraman, S. Hosseinverdi</strong><br>
+            Development of a Performance Portable Compressible Flow Solver on Structured Curvilinear Grids.<br>
+            In: <em>AIAA AVIATION Forum and ASCEND</em>, AIAA Paper 2024-3537, 2024.<br>
+            <a class="pub-link" href="assets/andrew-bodling-aiaa-2024.pdf" target="_blank" rel="noopener">
               Download PDF
             </a>
-          </li>
+          </li>          
           <li>
-            <strong>G. Zagaris, K.R. Holst, J. Sitaraman, S. Hosseinverdi, W.C. Tyson, … A.L. Bodling, …</strong><br>
+            <strong>G. Zagaris, K.R. Holst, J. Sitaraman, S. Hosseinverdi, W.C. Tyson, … A. Bodling, …</strong><br>
             Mint: A Performance Portable Mesh Data Model Enabling the Development of Next-Generation Massively Parallel Multi-Physics Applications.<br>
             In: <em>AIAA SciTech 2025 Forum</em>, AIAA Paper 2025-0686, 2025.<br>
             <a class="pub-link" href="assets/andrew-bodling-aiaa-2025.pdf" target="_blank" rel="noopener">
@@ -404,10 +573,18 @@
             </a>
           </li>    
           <li>
-            <strong>A.L. Bodling, G. Zagaris, D. Jude, J. Sitaraman, S. Hosseinverdi</strong><br>
-            Development of a Performance Portable Compressible Flow Solver on Structured Curvilinear Grids.<br>
-            In: <em>AIAA AVIATION Forum and ASCEND</em>, AIAA Paper 2024-3537, 2024.<br>
-            <a class="pub-link" href="assets/andrew-bodling-aiaa-2024.pdf" target="_blank" rel="noopener">
+            <strong>A. Bodling, D.J. Garmann</strong><br>
+            Wingtip Vortex Stability and Control Using Mean Flow Perturbation.<br>
+            In: <em>ASME Fluids Engineering Division Summer Meeting</em>, FEDSM 2019, Paper 59032, V002T02A060, 2019.<br>
+            <a class="pub-link" href="assets/andrew-bodling-asme-2019.pdf" target="_blank" rel="noopener">
+              Download PDF
+            </a>
+          </li>
+          <li>
+            <strong>A.M. Moushegian, D.M. Farish, E.W. Hayden, R.W.T. Lead, A. Bodling</strong><br>
+            Investigation of Modeling Approaches to High-Fidelity Computational Predictions of Tiltrotor/Obstacle Aerodynamic Interactions.<br>
+            In: <em>Vertical Flight Society 81st Annual Forum &amp; Technology Display (FORUM 81)</em>, 2025.<br>
+            <a class="pub-link" href="assets/Andrew-Bodling-vfs81-2025.pdf" target="_blank" rel="noopener">
               Download PDF
             </a>
           </li>
@@ -420,15 +597,7 @@
             </a>
           </li>
           <li>
-            <strong>A.L. Bodling, D.J. Garmann</strong><br>
-            Wingtip Vortex Stability and Control Using Mean Flow Perturbation.<br>
-            In: <em>ASME Fluids Engineering Division Summer Meeting</em>, FEDSM 2019, Paper 59032, V002T02A060, 2019.<br>
-            <a class="pub-link" href="assets/andrew-bodling-asme-2019.pdf" target="_blank" rel="noopener">
-              Download PDF
-            </a>
-          </li>
-          <li>
-            <strong>A.L. Bodling, A. Sharma</strong><br>
+            <strong>A. Bodling, A. Sharma</strong><br>
             Implementation of the Ffowcs Williams–Hawkings equation: Predicting the far field noise from airfoils while using boundary layer tripping mechanisms.<br>
             In: <em>ASME Fluids Engineering Division Summer Meeting</em>, FEDSM 2018, Paper 51555, V001T08A006, 2018.
           </li>
@@ -448,7 +617,7 @@
             In: <em>17th International Symposium on Transport Phenomena and Dynamics of Rotating Machinery (ISROMAC)</em>, 2017.
           </li>
         </ul>
-        <h3>Dissertation</h3>
+        <h3 id="dissertation">Dissertation</h3>
         <ul class="pub-list">
           <li>
             <strong>A. Bodling</strong><br>
@@ -467,7 +636,7 @@
       <div class="container">
         <h2>Contact</h2>
         <p>
-          I’m open to roles in CFD, HPC, scientific computing, and performance engineering.
+          I’m open to roles in CFD, HPC, scientific computing, and GPU/performance optimization engineering.
           If you’d like to discuss opportunities or collaborations, feel free to reach out.
         </p>
         <div class="contact-grid">
