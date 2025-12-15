@@ -83,19 +83,23 @@
         <h2>About</h2>
         <div class="two-col">
           <p>
-            I’m a CFD engineer and developer specializing in rotorcraft and high-performance
-            computing. I’ve spent over a decade building, extending, and applying high-fidelity
-            solvers for the U.S. Department of Defense, NASA, and industry partners—covering
-            everything from rotorcraft wake aerodynamics to store-separation and tiltrotor /
-            ship-deck interactions.
+            I’m a GPU-focused CFD engineer and scientific software developer who builds high-fidelity
+            solvers for real aerospace problems. My work centers on developing and integrating
+            performance-portable flow solvers into large production frameworks like CREATE-AV Helios—
+            including GPU-accelerated near-body solvers, overset infrastructure, and automated
+            meshing / setup pipelines used for rotorcraft, tiltrotor, and store-separation studies
+            at NASA and across DoD programs.
           </p>
           <p>
-            My work bridges numerical methods, GPU performance engineering, and production
-            workflows. I enjoy taking complex, legacy CFD ecosystems and turning them into
-            robust, performance-portable tools—integrating modern C++, Pybind11, and GPU
-            backends while keeping analysts productive and simulations tightly validated
-            against wind-tunnel and flight-test data.
-          </p>
+            On the software side, I work primarily in modern C++ and Python with
+            CUDA for GPU acceleration, hybrid MPI + OpenMP on CPUs, and portability
+            layers such as RAJA, Kokkos, OpenACC and Mint. I enjoy profiling kernels with
+            Nsight, redesigning data layouts for better memory behavior, and exposing clean C++/Pybind11
+            APIs so complex Fortran/C++ CFD codes behave like reusable GPU libraries instead of
+            standalone executables. I’m especially interested in roles that blend GPU performance
+            engineering, numerical methods, and production-quality code to deliver faster and more
+            reliable simulation tools for engineering teams.
+          </p>          
         </div>
       </div>
     </section>
@@ -112,9 +116,9 @@
               <li>Rotor wake aerodynamics &amp; tiltrotor interactions</li>
               <li>Finite volume / finite difference, Large Eddy Simulation (LES) / Delayed Detached Eddy Simulation (DDES)</li>
               <li>High-order schemes (MUSCL, WENO, high-order filtering) and
-                  implicit solvers (DADI / approximate factorization).
+                  implicit solvers (DADI / approximate factorization)
               </li>
-              <li>Overset / Chimera &amp; unstructured and structured curvilinear grids</li>
+              <li>Overset / Chimera with unstructured and structured curvilinear grids</li>
             </ul>
           </div>
 
@@ -122,21 +126,20 @@
             <h3>GPU &amp; HPC Performance</h3>
             <ul>
               <li>
-                GPU acceleration with CUDA, OpenMP offload, Kokkos, Raja/Mint,
-                including kernel optimization, memory-hierarchy tuning, and
-                occupancy/roofline analysis.
-              </li>
-              <li>
-                MPI + OpenMP hybrid parallelism and multi-node scaling on large
-                CPU/GPU clusters.
+                GPU acceleration with CUDA and hybrid MPI + OpenMP on CPUs, plus
+                portability layers such as RAJA, Kokkos, Mint, and OpenACC
               </li>
               <li>
                 Performance-portable design across CPUs and GPUs (single-source
                 C++ with backend selection at runtime).
               </li>
               <li>
+                Multi-node scaling and strong/weak-scaling studies on large
+                CPU/GPU clusters.
+              </li>
+              <li>
                 Nsight Compute/Systems, roofline-style profiling, and
-                profiling-guided GPU optimization (Nsight Compute/Systems, timers, NVTX markers).
+                instrumentation-driven optimization using timers and NVTX markers.
               </li>
               <li>
                 Workflow automation and job orchestration on PBS/Slurm-based
@@ -148,15 +151,26 @@
           <div class="card">
             <h3>Programming &amp; Tooling</h3>
             <ul>
-              <li>Modern C++ (17/20), Fortran, Python, MATLAB, Bash</li>
-              <li>Pybind11 bindings &amp; mixed C++/Fortran/Python interfaces</li>
-              <li>CMake-based builds, Git/SVN, VS Code</li>
               <li>
-                Modern C++ development practices: templates, RAII, unit testing,
-                CMake-based builds, and Git-driven workflows.
+                Modern C++ (17/20), Fortran, Python, MATLAB, Bash
               </li>
-              <li>Data analysis &amp; plotting (Python, Tecplot, FieldView)</li>
-              <li>Linux HPC tools and scripting</li>
+              <li>
+                Modern C++ development practices: templates, RAII, and
+                unit testing for scientific codes
+              </li>
+              <li>
+                Pybind11 bindings &amp; mixed C++ / Fortran / Python interfaces
+              </li>
+              <li>
+                CMake-based builds, Git/SVN, VS Code, and CI-friendly
+                project layouts
+              </li>
+              <li>
+                Data analysis &amp; plotting (Python, Tecplot, FieldView)
+              </li>
+              <li>
+                Linux command-line workflows and HPC scripting
+              </li>              
             </ul>
           </div>
 
