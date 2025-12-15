@@ -514,8 +514,10 @@ a:hover {
     width: 260px;
   }
 }
-
-/* Make anchored scroll stop *above* the sticky header */
-#conference-papers {
-  scroll-margin-top: 90px; /* tweak 80–110px depending on header height */
+/* Offset in-page anchors so headings aren't hidden under the sticky header */
+#dev-projects,
+#cfd-projects,
+#conference-papers,
+#dissertation {
+  scroll-margin-top: 75px;  /* adjust 100–140px until it looks perfect */
 }

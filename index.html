@@ -19,7 +19,8 @@
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
+        <a href="#dev-projects">Dev Projects</a>
+        <a href="#cfd-projects">CFD Projects</a>
         <a href="#publications">Publications</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -110,19 +111,37 @@
               <li>Compressible Navier–Stokes (steady &amp; unsteady)</li>
               <li>Rotor wake aerodynamics &amp; tiltrotor interactions</li>
               <li>Finite volume / finite difference, Large Eddy Simulation (LES) / Delayed Detached Eddy Simulation (DDES)</li>
-              <li>High-order schemes (MUSCL, WENO, high-order filtering)</li>
-              <li>Overset / Chimera &amp; structured curvilinear grids</li>
+              <li>High-order schemes (MUSCL, WENO, high-order filtering) and
+                  implicit solvers (DADI / approximate factorization).
+              </li>
+              <li>Overset / Chimera &amp; unstructured and structured curvilinear grids</li>
             </ul>
           </div>
 
           <div class="card">
-            <h3>HPC &amp; Performance</h3>
+            <h3>GPU &amp; HPC Performance</h3>
             <ul>
-              <li>GPU acceleration with CUDA, OpenMP offload, Kokkos, Raja</li>
-              <li>MPI + OpenMP hybrid parallelism on large clusters</li>
-              <li>Performance-portable design across CPUs and GPUs</li>
-              <li>Nsight Compute/Systems, profiling &amp; roofline-style analysis</li>
-              <li>Workflow automation on PBS/Slurm HPC environments</li>
+              <li>
+                GPU acceleration with CUDA, OpenMP offload, Kokkos, Raja/Mint,
+                including kernel optimization, memory-hierarchy tuning, and
+                occupancy/roofline analysis.
+              </li>
+              <li>
+                MPI + OpenMP hybrid parallelism and multi-node scaling on large
+                CPU/GPU clusters.
+              </li>
+              <li>
+                Performance-portable design across CPUs and GPUs (single-source
+                C++ with backend selection at runtime).
+              </li>
+              <li>
+                Nsight Compute/Systems, roofline-style profiling, and
+                profiling-guided GPU optimization (Nsight Compute/Systems, timers, NVTX markers).
+              </li>
+              <li>
+                Workflow automation and job orchestration on PBS/Slurm-based
+                HPC environments.
+              </li>
             </ul>
           </div>
 
@@ -132,6 +151,10 @@
               <li>Modern C++ (17/20), Fortran, Python, MATLAB, Bash</li>
               <li>Pybind11 bindings &amp; mixed C++/Fortran/Python interfaces</li>
               <li>CMake-based builds, Git/SVN, VS Code</li>
+              <li>
+                Modern C++ development practices: templates, RAII, unit testing,
+                CMake-based builds, and Git-driven workflows.
+              </li>
               <li>Data analysis &amp; plotting (Python, Tecplot, FieldView)</li>
               <li>Linux HPC tools and scripting</li>
             </ul>
@@ -142,8 +165,7 @@
             <ul>
               <li>Rotorcraft &amp; tiltrotor aerodynamics</li>
               <li>Aeroacoustics &amp; noise-reduction concepts</li>
-              <li>Fracture-risk &amp; structural-safety CFD coupling</li>
-              <li>Uncertainty quantification &amp; sampling (LHS)</li>
+              <li>High-fidelity validation against wind-tunnel and flight-test data</li>
               <li>Technical writing &amp; conference/journal publications</li>
             </ul>
           </div>
@@ -267,7 +289,7 @@
       <div class="container">
         <h2>Projects</h2>
 
-        <h3>Selected Development Projects</h3>
+        <h3 id="dev-projects">Selected Development Projects</h3>
         <div class="cards-grid projects-fullwidth">
 
           <article class="card project-card">
@@ -440,7 +462,7 @@
 
         </div>
 
-        <h3>Selected CFD Application Projects</h3>
+        <h3 id="cfd-projects">Selected CFD Application Projects</h3>
         <div class="cards-grid projects-fullwidth">
 
           <article class="card project-card">
