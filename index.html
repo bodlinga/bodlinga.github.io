@@ -273,11 +273,35 @@
           <article class="card project-card">
             <h3>Performance-Portable Overset Near-Body Solver (CREATE-AV Helios)</h3>
             <p>
-              Architect &amp; lead developer of a performance-portable overset structured
-              curvilinear compressible flow near-body solver integrated into CREATE-AV
-              Helios, achieving &gt;2× speed-up vs other GPU flow solvers (134M cells/s)
-              while maintaining high-fidelity rotorcraft predictions on GPUs.
+              Architect &amp; lead developer of a performance-portable structured
+              curvilinear compressible flow solver (G3D) built on Mint/RAJA/Kokkos
+              and integrated as a GPU-accelerated near-body component in
+              CREATE-AV Helios. The solver supports high-order MUSCL and WENO
+              reconstructions, SA-RANS turbulence modeling, and implicit DADI
+              time-stepping on single-source CPU/GPU binaries, enabling runtime
+              selection of the execution device while using exactly the same code
+              path.
             </p>
+            <p>
+              The core methodology was verified and validated on canonical test
+              cases—including transonic inviscid flow over NACA0012, steady and
+              unsteady viscous flow over cylinders, turbulent NACA0012, and a
+              18M-cell ONERA M6 wing—showing close agreement with experiments
+              and legacy codes such as GARFIELD, OVERFLOW, and RAPIDUS, while
+              delivering a 37× speedup on a single A100 GPU versus a 64-thread
+              CPU socket and about 1.6× faster time-to-converged-drag than the
+              current GPU-enabled OVERFLOW implementation for ONERA M6.
+            </p>
+            <p>
+              Building on this foundation, the solver has since been extended
+              from single-block to overset multi-block capability and wired into
+              Helios’s Pundit overset infrastructure. This allows the same
+              performance-portable solver to march overset near-body rotorcraft
+              grids on GPUs inside Helios, while the off-body Cartesian solver
+              and other participants reuse the existing Helios coupling
+              mechanisms with minimal changes to user workflows.
+            </p>
+
             <ul class="tag-list">
               <li>CFD</li>
               <li>GPU</li>
@@ -286,18 +310,37 @@
             </ul>
             <a class="card-link" href="https://www.linkedin.com/posts/andrew-bodling_had-a-great-time-last-week-presenting-my-activity-7228622829628313602-YFxr?utm_source=share&utm_medium=member_desktop&rcm=ACoAABDvI9IBC0rxICxlp76DvyZ8SZpTd1ThVQ4" target="_blank" rel="noopener">
               Presentation Video →
+            </a><br>
+            <a class="card-link" href="#conference-papers">
+              Link to conference publication →
             </a>
           </article>
 
           <article class="card project-card">
             <h3>GPU-Accelerated OVERFLOW Integration in Helios</h3>
             <p>
-              Designed and implemented a GPU-native integration of OVERFLOW into the Helios framework by replacing file-based coupling with a 
-              C++/Pybind11 API layer and refactoring legacy Fortran modules so grid and solution arrays remain resident on the GPU across time steps. 
-              Exposed zero-copy interfaces for overset interpolation and boundary-condition updates, allowing Helios to orchestrate the near-body solver
-              from Python while the heavy CFD kernels run entirely on the device—eliminating CPU–GPU data marshaling bottlenecks and significantly 
-              improving end-to-end performance.
-            </p>
+              Designed and implemented a GPU-native integration of OVERFLOW into the
+              CREATE-AV Helios framework, which couples independent near-body solvers
+              to an off-body solver through its Pundit module for automated grid
+              motion, hole-cutting, and overset connectivity. The integration exposes
+              OVERFLOW as a GPU-accelerated library that Helios can call directly via
+              a C++/Pybind11 interface, rather than as a standalone code driven by
+              external scripts.
+            </p>           
+            <p>
+              The interface builds a structured “bag” of near-body data that both
+              Pundit and the GPU-enabled OVERFLOW routines consume, including grid
+              sizes, body and boundary tags, host and device coordinate arrays,
+              solution variables, iblanking, connectivity, and per-partition
+              <code>gpu_data</code> dictionaries in the exact layout Pundit expects. 
+              Pundit and OVERFLOW then operate directly on these
+              device pointers, so overset interpolation, boundary-condition updates,
+              and time marching all run on the same GPU-resident arrays while Helios
+              handles configuration and orchestration from Python. This removes a large
+              amount of manual, script-driven glue and turns OVERFLOW into a reusable
+              GPU near-body component that can be dropped into different Helios
+              workflows with minimal user effort.
+            </p>             
             <ul class="tag-list">
               <li>CFD</li>
               <li>GPU</li>
@@ -308,8 +351,24 @@
 
           <article class="card project-card">
             <h3>Automated OVERFLOW Mesh &amp; Input Generation</h3>
+            <p><strong>Fully automated overset grid generation workflow for rotor blades in Helios + OVERFLOW.</strong></p>
             <p>
-              Automated end-to-end OVERFLOW mesh &amp; input generation in Helios, cutting analyst setup time 95%
+              Built an end-to-end automation pipeline in Helios that sets up OVERFLOW
+              near-body inputs for rotor blades, including surface and volume grids
+              for the blade, root, and cap, as well as force-integration and solver
+              input files. The user either supplies a structured blade surface mesh
+              or simply specifies blade definitions (chord, twist, anhedral, sweep
+              distributions), in which case the code generates the blade surface mesh
+              automatically. Using NASA Chimera Grid Tools under the hood, the script
+              sweeps through parameter combinations until it detects high-quality overset
+              cap/root surface meshes and then repeats the process to obtain a high-quality blade/root/cap volume grid. Once the grid is accepted, the
+              pipeline writes out all OVERFLOW force-integration and solver input
+              files ready for Helios. A process that previously required an expert
+              doing hours of manual trial-and-error can now be run by a novice with a
+              single input file; this workflow has been used to generate volume grids
+              for 13 different rotor blade geometries (7AD, CH53-K, TRAM, XC142,
+              SpinBlades Black Belt 685, ADM swept, RAH-66, UH60 variants, BERPA,
+              CH53-TR) using the same configuration.
             </p>
             <ul class="tag-list">
               <li>Automation</li>
@@ -333,7 +392,7 @@
               <li>MFP</li>
             </ul>
             <a class="card-link" href="#conference-papers">
-              Link to conference publications →
+              Link to conference publication →
             </a>
             <img
                 src="assets/tipvortex.jpg"
@@ -360,7 +419,7 @@
               geometry by varying the height of the fences in discrete steps (as opposed to continuous variation in the experiment model) along the chord. 
               The massively parallel LES code, FDL3DI, was extended to handle 90° corners via automated stair-step edge detection and adaptive filter order, enabling accurate LES on 
               complex geometries. Also, the OpenMP load balancing approach was optimized for the stair-step geometry, cutting simulation wall-clock time by 55 % on a 2 K-core cluster. 
-              A Ffowcs Williams-Hawkings solver was validated and applied to the trailing-edge noise-reduction designs. 
+              A Ffowcs Williams-Hawkings solver was validated and applied to the trailing-edge noise-reduction designs. This work was published in Bioinspiration and Biomimetics and the Journal of Sound and Vibration.
             </p>
             <ul class="tag-list">
               <li>LES</li>
@@ -433,7 +492,7 @@
               Army / Navy article →
             </a><br>
             <a class="card-link" href="#conference-papers">
-              Link to conference publications →
+              Link to conference publication →
             </a>
             <div class="project-media">
               <img
