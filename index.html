@@ -84,23 +84,19 @@
         <h2>About</h2>
         <div class="two-col">
           <p>
-            I’m a GPU-focused CFD engineer and scientific software developer who builds high-fidelity
-            solvers for real aerospace problems. My work centers on developing and integrating
-            performance-portable flow solvers into large production frameworks like CREATE-AV Helios—
-            including GPU-accelerated near-body solvers, overset infrastructure, and automated
-            meshing / setup pipelines used for rotorcraft, tiltrotor, and store-separation studies
-            at NASA and across DoD programs.
+            I’m a GPU-focused CFD and HPC software engineer with 10+ years building high-throughput
+            simulation tools for real aerospace problems. At NASA Ames, I lead development of a
+            performance-portable structured-curvilinear near-body compressible solver (134M cells/s)
+            and integrate GPU-enabled near-body solvers into CREATE-AV Helios for overset rotorcraft,
+            tiltrotor, and store-separation workflows.
           </p>
           <p>
-            On the software side, I work primarily in modern C++ and Python with
-            CUDA for GPU acceleration, hybrid MPI + OpenMP on CPUs, and portability
-            layers such as RAJA, Kokkos, OpenACC and Mint. I enjoy profiling kernels with
-            Nsight, redesigning data layouts for better memory behavior, and exposing clean C++/Pybind11
-            APIs so complex Fortran/C++ CFD codes behave like reusable GPU libraries instead of
-            standalone executables. I’m especially interested in roles that blend GPU performance
-            engineering, numerical methods, and production-quality code to deliver faster and more
-            reliable simulation tools for engineering teams.
-          </p>          
+            I work primarily in modern C++ (C++17/20), CUDA, Fortran, and Python, using MPI + OpenMP and
+            portability layers like Kokkos, RAJA, and OpenACC. I enjoy profiling with Nsight, improving
+            data layouts and kernel performance, and building clean Pybind11 APIs—so legacy Fortran/C++
+            solvers can behave like reusable GPU libraries. I also build automation pipelines that make
+            complex workflows reproducible and fast (e.g., dramatically reducing setup time-to-first-run).
+          </p>
         </div>
       </div>
     </section>
@@ -201,32 +197,26 @@
           <article class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-              <h3>CFD Developer – Army Comp. Aeromechanics Lab – NASA Ames</h3>
+              <h3>CFD Developer – Army Computational Aeromechanics Lab – NASA Ames</h3>
               <span class="timeline-meta">Jun ‘19 – Present · Moffett Field, CA</span>
               <ul>
                 <li>
-                  Architect &amp; lead developer of a performance-portable overset structured curvilinear compressible flow near-body solver—2 × faster than other well-known GPU flow solvers (134 M cells/s throughput) — now being integrated into CREATE-AV Helios
+                  Led design + optimization of a single-source GPU/CPU C++ codebase (shared kernels across backends), delivering 134M cells/s throughput (up to ~2× faster than comparable GPU solvers) and integrating into a production multi-physics framework.
                 </li>
                 <li>
-                  Integrated GPU-accelerated OVERFLOW into the Helios framework, including Pybind11-based bindings and new GPU-enabled Fortran modules to support zero-copy near-body CFD on GPUs
+                  Rebuilt the Python/C++/Fortran interface connecting CREATE-AV Helios to OVERFLOW (migrated SWIG → Pybind11) and updated Fortran glue code to call GPU routines, enabling GPU near-body CFD in Helios’s overset rotorcraft workflow.
                 </li>
                 <li>
-                  Automated end-to-end OVERFLOW mesh &amp; input generation in Helios, cutting analyst setup time 95%
+                  Engineered a reproducible automation pipeline that cut “time-to-first-run” (analyst setup) by 95%, improving iteration speed and reliability of GPU workflows at scale.
                 </li>
                 <li>
-                  Implemented high-order filtering scheme into Cart-p, which proved superior to current AD scheme
+                  Optimized and automated an end-to-end HPC simulation workflow, achieving ~6× speedup and ~83% compute-cost reduction while maintaining accuracy (~5% vs flight test).
                 </li>
                 <li>
-                  Led high-fidelity CFD simulations of six-degree-of-freedom store separation for the Apache helicopter
+                  Led a rotor-wake accuracy campaign to isolate sources of numerical error and improve prediction of rotor wake vortex systems, achieving unprecedented agreement with stereo-PIV measurements.
                 </li>
                 <li>
-                  Led rotor-wake accuracy campaign: identified sources of numerical error influencing the prediction of the rotor wake vortex system, and achieved unprecedented CFD agreement with stereo-PIV measurements
-                </li>
-                <li>
-                  Built and automated the CFD framework (Helios + scripted inputs) for V-22 tiltrotor . ship-deck simulations, validating rotor loads/air-frame download to ˜ 5 % of flight-test data while cutting compute cost 83 % (6 × speed-up)
-                </li>
-                <li>
-                  Delivered high-fidelity CFD predictions for Sikorsky’s FARA competitive-prototype that matched wind-tunnel data within test uncertainty, informing design decisions
+                  Led high-fidelity 6-DOF store-separation CFD for the Apache helicopter and delivered validated predictions informing design decisions (e.g., Sikorsky FARA competitive prototype).
                 </li>
               </ul>
             </div>
@@ -235,14 +225,14 @@
           <article class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-              <h3>Research Scientist – AFRL Computational Sciences Center</h3>
-              <span class="timeline-meta">July ‘18 – Jun ‘19 · Dayton, OH</span>
+              <h3>CFD Developer – AFRL Computational Sciences Center</h3>
+              <span class="timeline-meta">Jul ‘18 – Jun ‘19 · Dayton, OH</span>
               <ul>
                 <li>
-                  Integrated Mean-Flow Perturbation (MFP) analysis into FDL3DI, enabling fast, embedded linear-stability studies of complex 3-D flows
+                  Integrated Mean-Flow Perturbation (MFP) analysis into FDL3DI, enabling fast, embedded linear-stability studies of complex 3D flows.
                 </li>
                 <li>
-                  Applied MFP to a Re = 2 × 105, AR 4 wingtip vortex, isolating the least-stable mode and frequency at the trailing-edge and within the incipient vortex core—results now guide actuator placement, frequency, and spatial modulation for future flow-control devices
+                  Applied MFP to a Re = 2 × 10<sup>5</sup>, AR = 4 wingtip vortex, isolating the least-stable mode and frequency at the trailing edge and within the incipient vortex core to guide future flow-control actuator design.
                 </li>
               </ul>
             </div>
@@ -251,20 +241,17 @@
           <article class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-              <h3>Graduate RA – Comp. Aerodynamics &amp; Aeroacoustics Lab</h3>
+              <h3>Graduate Research Assistant – Computational Aerodynamics &amp; Aeroacoustics Lab (Iowa State University)</h3>
               <span class="timeline-meta">Jan ‘16 – May ‘19 · Ames, IA</span>
               <ul>
                 <li>
-                  Extended FDL3DI to handle 90° corners via automated stair-step edge detection and adaptive filter order, enabling accurate LES on complex geometries
+                  Extended FDL3DI to handle 90° corners via automated stair-step edge detection and adaptive filter order, enabling accurate LES on complex geometries.
                 </li>
                 <li>
-                  Re-engineered OpenMP load balancing, cutting simulation wall-clock time by 55 % on a 2 K-core cluster
+                  Re-engineered OpenMP load balancing, cutting simulation wall-clock time ~55% on a 2,000-core cluster.
                 </li>
                 <li>
-                  Validated Ffowcs Williams-Hawkings solver &amp; applied it to trailing-edge noise-reduction designs
-                </li>
-                <li>
-                  Pioneered wall-resolved LES of airfoils with finlet fences inspired by owl down feathers—demonstrating validated reductions in surface-pressure unsteadiness and far-field noise (greater for taller fences) via increased boundary-layer source–scatter-edge separation
+                  Validated a Ffowcs Williams-Hawkings solver and applied it to trailing-edge noise-reduction designs; pioneered wall-resolved LES studies of bio-inspired finlet fences with validated noise reductions.
                 </li>
               </ul>
             </div>
@@ -274,13 +261,13 @@
             <div class="timeline-dot"></div>
             <div class="timeline-content">
               <h3>CFD Application Engineer Intern – Exa Corporation</h3>
-              <span class="timeline-meta">July. ‘15 – Jan. ‘16 · Burlington, MA</span>
+              <span class="timeline-meta">Jul ‘15 – Jan ‘16 · Burlington, MA</span>
               <ul>
                 <li>
-                  Prepared watertight heavy-vehicle meshes (ANSA &amp; PowerDELTA) and ran parametric PowerFLOW CFD studies across design variants, delivering data-driven drag-trade guidance to customers
+                  Prepared watertight heavy-vehicle meshes (ANSA, PowerDELTA) and ran parametric PowerFLOW CFD studies across design variants, delivering data-driven drag-trade guidance to customers.
                 </li>
                 <li>
-                  Performed PowerFLOW simulations to optimize commercial-bus cabin airflow and built VB/Python scripts to auto-generate CFD result presentations—cutting report prep from days to hours
+                  Performed PowerFLOW simulations to optimize commercial-bus cabin airflow and built VB/Python scripts to auto-generate CFD result presentations, cutting report preparation from days to hours.
                 </li>
               </ul>
             </div>
@@ -289,11 +276,11 @@
           <article class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-              <h3>Graduate RA – Exp. Aero. Lab &amp; Undergrad. RA– Comp. Reliability Lab</h3>
-              <span class="timeline-meta">Sep ’12 – May ‘15</span>
+              <h3>Research Assistant – Experimental Aerodynamics Lab &amp; Computational Reliability Lab</h3>
+              <span class="timeline-meta">Sep ‘12 – May ‘15 · Ames, IA</span>
               <ul>
                 <li>
-                  PIV studies &amp; implemented memory-less Latin Hypercube Sampling in the FAA’s SMART tool
+                  Performed PIV studies and implemented memory-less Latin Hypercube Sampling in the FAA SMART fracture-risk tool.
                 </li>
               </ul>
             </div>
@@ -302,6 +289,7 @@
         </div>
       </div>
     </section>
+
 
     <!-- Projects -->
     <section id="projects" class="section section-alt">
@@ -317,34 +305,35 @@
 
           <article class="card project-card">
             <h3>Performance-Portable Overset Near-Body Solver (CREATE-AV Helios)</h3>
+
             <p>
-              Architect &amp; lead developer of a performance-portable structured
-              curvilinear compressible flow solver (G3D) built on Mint/RAJA/Kokkos
-              and integrated as a GPU-accelerated near-body component in
-              CREATE-AV Helios. The solver supports high-order MUSCL and WENO
-              reconstructions, SA-RANS turbulence modeling, and implicit DADI
-              time-stepping on single-source CPU/GPU binaries, enabling runtime
-              selection of the execution device while using exactly the same code
-              path.
+              Led the design and optimization of a single-source CPU/GPU C++ solver (G3D) for
+              structured-curvilinear compressible near-body CFD, with shared kernels across
+              backends to enable identical code paths on CPUs and GPUs. Achieved end-to-end
+              throughput of 134M cells/s (up to ~2× faster than comparable GPU solvers) and
+              integrated the solver as a GPU-accelerated near-body component inside a production
+              multi-physics framework (CREATE-AV Helios).
             </p>
+
             <p>
-              The core methodology was verified and validated on canonical test
-              cases—including transonic inviscid flow over NACA0012, steady and
-              unsteady viscous flow over cylinders, turbulent NACA0012, and a
-              18M-cell ONERA M6 wing—showing close agreement with experiments
-              and legacy codes such as GARFIELD, OVERFLOW, and RAPIDUS, while
-              delivering a 37× speedup on a single A100 GPU versus a 64-thread
-              CPU socket and about 1.6× faster time-to-converged-drag than the
+              The solver supports high-order MUSCL and WENO reconstructions, SA-RANS turbulence
+              modeling, and implicit DADI time stepping, while enabling runtime selection of the
+              execution device using the same implementation.
+            </p>
+
+            <p>
+              Verified and validated on canonical test cases—including transonic inviscid flow
+              over NACA0012, steady and unsteady viscous flow over cylinders, turbulent NACA0012,
+              and an 18M-cell ONERA M6 wing—showing close agreement with experiments and legacy
+              solvers (GARFIELD, OVERFLOW, RAPIDUS). Demonstrated a 37× speedup on a single A100
+              GPU versus a 64-thread CPU socket and ~1.6× faster time-to-converged-drag than the
               current GPU-enabled OVERFLOW implementation for ONERA M6.
             </p>
+
             <p>
-              Building on this foundation, the solver has since been extended
-              from single-block to overset multi-block capability and wired into
-              Helios’s Pundit overset infrastructure. This allows the same
-              performance-portable solver to march overset near-body rotorcraft
-              grids on GPUs inside Helios, while the off-body Cartesian solver
-              and other participants reuse the existing Helios coupling
-              mechanisms with minimal changes to user workflows.
+              Extended the solver from single-block to overset multi-block capability and wired it
+              into Helios’s overset infrastructure, enabling GPU near-body marching for rotorcraft
+              grids while reusing existing coupling mechanisms with minimal workflow changes.
             </p>
 
             <ul class="tag-list">
@@ -353,49 +342,47 @@
               <li>C++ / Fortran</li>
               <li>RAJA / Kokkos / Mint</li>
             </ul>
+
             <a class="card-link" href="https://www.linkedin.com/posts/andrew-bodling_had-a-great-time-last-week-presenting-my-activity-7228622829628313602-YFxr?utm_source=share&utm_medium=member_desktop&rcm=ACoAABDvI9IBC0rxICxlp76DvyZ8SZpTd1ThVQ4" target="_blank" rel="noopener">
               Presentation Video →
             </a><br>
             <a class="card-link" href="#conference-papers">
               Link to conference publication →
             </a>
+
             <img
               src="assets/onera_m6_drag_convergence_a100.png"
               alt="ONERA M6 A100 GPU: time to drag convergence for G3D, GARFIELD, OVERFLOW, RAPIDUS"
               style="width:70%;height:auto;border-radius:12px;margin-top:0.6rem;
-                     display:block;margin-left:auto;margin-right:auto;"
-            >            
+                    display:block;margin-left:auto;margin-right:auto;"
+            >
             <p style="text-align:center;font-size:0.85rem;color:#9ca3af;margin-top:0.25rem;">
               ONERA M6 wing: time to converged drag on a single A100 GPU
               (G3D vs GARFIELD, OVERFLOW, RAPIDUS).
-            </p>            
+            </p>
           </article>
+
 
           <article class="card project-card">
             <h3>GPU-Accelerated OVERFLOW Integration in Helios</h3>
+
             <p>
-              Designed and implemented a GPU-native integration of OVERFLOW into the
-              CREATE-AV Helios framework, which couples independent near-body solvers
-              to an off-body solver through its Pundit module for automated grid
-              motion, hole-cutting, and overset connectivity. The integration exposes
-              OVERFLOW as a GPU-accelerated library that Helios can call directly via
-              a C++/Pybind11 interface, rather than as a standalone code driven by
-              external scripts.
-            </p>           
+              Rebuilt the Python/C++/Fortran interface that connects CREATE-AV Helios to OVERFLOW,
+              modernizing a legacy SWIG-based data-transfer layer into a Pybind11-driven integration
+              and updating Fortran “glue” modules to call GPU-enabled OVERFLOW routines. This enabled
+              OVERFLOW to run as a GPU near-body solver inside Helios’s overset rotorcraft workflow,
+              where Pundit handles grid motion, hole-cutting, and overset connectivity.
+            </p>
+
             <p>
-              The interface builds a structured “bag” of near-body data that both
-              Pundit and the GPU-enabled OVERFLOW routines consume, including grid
-              sizes, body and boundary tags, host and device coordinate arrays,
-              solution variables, iblanking, connectivity, and per-partition
-              <code>gpu_data</code> dictionaries in the exact layout Pundit expects. 
-              Pundit and OVERFLOW then operate directly on these
-              device pointers, so overset interpolation, boundary-condition updates,
-              and time marching all run on the same GPU-resident arrays while Helios
-              handles configuration and orchestration from Python. This removes a large
-              amount of manual, script-driven glue and turns OVERFLOW into a reusable
-              GPU near-body component that can be dropped into different Helios
-              workflows with minimal user effort.
-            </p>             
+              The integration passes the near-body mesh, state, and overset metadata in the exact
+              structures Helios/Pundit expects (grid sizes, boundary/body tags, coordinates, solution
+              fields, iblanking, and connectivity), while allowing Helios to orchestrate the workflow
+              from Python. The result is a production-ready GPU near-body component that plugs into
+              Helios alongside other GPU solvers, reducing brittle script-driven coupling and making
+              GPU workflows more reproducible and easier to run at scale.
+            </p>
+
             <ul class="tag-list">
               <li>GPU CFD</li>
               <li>Helios</li>
